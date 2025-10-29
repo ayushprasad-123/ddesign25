@@ -71,14 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateParallax() {
     const offset = lastScrollY * (1 - speed);
     const h=window.innerHeight;
-    document.getElementById("bg").style.transform = `translateY(${offset}px)`;
-    document.getElementById("titlename").style.opacity=Math.max(0,1-lastScrollY/h);
     if(lastScrollY>h+200){
         document.getElementById("bg").style.display="none";
         document.getElementById("titlename").style.display="none";
     }else{
         document.getElementById("bg").style.display="block";
         document.getElementById("titlename").style.display="inline";
+        document.getElementById("bg").style.transform = `translateY(${offset}px)`;
+        document.getElementById("titlename").style.opacity=Math.max(0,1-2*lastScrollY/h);
     }
     ticking = false;
   }

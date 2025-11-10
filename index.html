@@ -17,15 +17,17 @@
             background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/07/Passer_montanus_malaccensis_%40_Kuala_Lumpur%2C_Malaysia_%281%29.jpg");
             position: relative;
             height: calc(100% + 200px);
-            background-position: center 0px;
+            background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             z-index: 0;
             will-change:transform;
+            width:50%;
+            transform:translateZ(0);
         }
         #titlename {
             position: fixed;
-            left: 50%;
+            left: 75%;
             top: 50%;
             transform: translate(-50%, -50%);
             color: green;
@@ -34,24 +36,15 @@
             letter-spacing: 5px;
             text-align:center;
             z-index: 1;
+            width:50%;
         }
 
         .content {
-            background-image: linear-gradient(to bottom,rgba(255,255,255,0)0px,rgba(255,255,255,0.5)140px,rgba(255,255,255,1)200px);
-            min-height:calc(200px / 0.3);
+            background-color: white;
             position: absolute;
             top: 100vh;
             z-index: 2;
             width: 100%;
-        }
-
-        .box{
-            text-align:center;
-            border: 2px solid black;
-            border-radius: 10px;
-            background-color: white;
-            margin: auto;
-            width: 50%;
         }
 
         .footer{
@@ -59,10 +52,50 @@
             margin:auto;
             padding:10px;
         }
+
+        #navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, background-color 0.3s ease, height 0.3s ease;
+            overflow-x: auto;
+            white-space: nowrap;
+            overscroll-behavior-x: contain;
+            z-index: 1000;
+        }
+
+        #navbar.shrink {
+            height: 50px;
+            background-color: #222;
+        }
+
+        #navbar a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+            line-height: 70px;
+            transition: background-color 0.3s ease;
+        }
+
+
+        #navbar a:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 
 <body>
+    <div id="navbar">hello hi</div>
     <div id="bg"></div>
     <div id="titlename">
             <p>
@@ -70,7 +103,6 @@
             </p>
     </div>
     <div class="content">
-        <div class="box">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id pellentesque mauris, et scelerisque augue. Curabitur ullamcorper quam a ipsum vehicula efficitur. Aliquam ut arcu leo. Sed fermentum nisi nec eros vestibulum imperdiet. Vivamus ornare velit in venenatis pretium. Vivamus id nisi nec justo consequat luctus eget ac est. Proin eleifend commodo volutpat. Nullam auctor dolor vitae feugiat semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Donec quis cursus augue. Ut ac quam sit amet nisi viverra tempus vel non sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla at tincidunt nisl.
 
 Nam blandit metus non nisi luctus, vitae varius risus rhoncus. Proin eget vulputate urna, eu gravida massa. Maecenas ac posuere sapien. Proin ac sapien eleifend, consectetur nibh at, euismod metus. Suspendisse potenti. Fusce ultricies massa vitae tempus semper. Phasellus ut sem vel nisi elementum faucibus eu nec mi. Vestibulum rhoncus ligula non sem porta, sed condimentum tellus sodales.
@@ -101,8 +133,6 @@ Phasellus dapibus, nunc id auctor vulputate, libero turpis mattis elit, at egest
 
 Fusce sed dictum tellus. Mauris vitae nisl quis ligula laoreet dapibus eget at eros. In hac habitasse platea dictumst. Curabitur gravida, nisl sit amet tristique luctus, mauris magna pretium nisl, vel mollis augue leo eget risus. Sed convallis sem vel vehicula imperdiet. Donec vel nisi eu ex fringilla suscipit. Sed molestie urna ut suscipit finibus.
 
-
-        </div>
         <p class="footer">© Ayush Prasad, 2025</p>
     </div>
 </body>
@@ -110,36 +140,57 @@ Fusce sed dictum tellus. Mauris vitae nisl quis ligula laoreet dapibus eget at e
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const speed = 0.3;
-  let lastScrollY = 0;
+  const bg = document.getElementById("bg");
+  const title = document.getElementById("titlename");
+  const navbar = document.getElementById("navbar");
+
+  let lastScrollY = window.scrollY;
+  let currentScrollY = window.scrollY;
   let ticking = false;
 
-  function updateParallax() {
-    const offset = lastScrollY * (1 - speed);
-    const h=window.innerHeight;
-    if(lastScrollY>h+200){
-        document.getElementById("bg").style.display="none";
-    }else{
-        document.getElementById("bg").style.display="block";
-        document.getElementById("bg").style.transform = `translateY(${offset}px)`;
-    }
-    if(1-2*lastScrollY/h>0){
-        document.getElementById("titlename").style.display="inline";
-        document.getElementById("titlename").style.opacity=1-2*lastScrollY/h;
-    }else{
-        document.getElementById("titlename").style.display="none";
-    }
-    ticking = false;
+
+  function updateNavbar(scrollY) {
+    if (scrollY < 50 || currentScrollY < lastScrollY) navbar.classList.remove('shrink');
+    else navbar.classList.add('shrink');
+    lastScrollY=currentScrollY
   }
 
+  function updateParallax(scrollY) {
+    const offset = Math.max(scrollY * (1 - speed), scrollY - 200);
+    const h = window.innerHeight; 
+
+    const bg = document.getElementById("bg");
+    const title = document.getElementById("titlename");
+
+    if (scrollY > h + 200) {
+        bg.style.display = "none";
+    } else {
+        bg.style.display = "block";
+        bg.style.transform = `translateY(${offset}px)`;
+    }
+
+    if (1 - 2 * scrollY / h > 0) {
+        title.style.display = "inline";
+        title.style.opacity = 2 - 4 * scrollY / h;
+    } else {
+        title.style.display = "none";
+    }
+}
+
   window.addEventListener('scroll', () => {
-    lastScrollY = window.scrollY;
+    currentScrollY = window.scrollY;
     if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
+      window.requestAnimationFrame(() => {
+        updateNavbar(lastScrollY);
+        updateParallax(lastScrollY);
+        ticking = false;
+      });
       ticking = true;
     }
   });
 
-  updateParallax();
+  updateParallax(0);
 });
+
 
 </script>

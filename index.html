@@ -15,7 +15,7 @@
 
         #bg {
             background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/07/Passer_montanus_malaccensis_%40_Kuala_Lumpur%2C_Malaysia_%281%29.jpg");
-            position: relative;
+            position: fixed;
             height: calc(100% + 200px);
             background-position: center;
             background-repeat: no-repeat;
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateParallax(scrollY) {
-    const offset = Math.max(scrollY * (1 - speed), scrollY - 200);
+    const offset = Math.max(scrollY * -speed, -200);
     const h = window.innerHeight; 
 
     const bg = document.getElementById("bg");

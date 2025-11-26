@@ -14,7 +14,7 @@
         }
 
         #bg {
-            background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/07/Passer_montanus_malaccensis_%40_Kuala_Lumpur%2C_Malaysia_%281%29.jpg");
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/c8/Animated_Ardea_cinerea.gif");
             position: fixed;
             height: calc(100% + 200px);
             background-position: center;
@@ -91,11 +91,46 @@
         #navbar a:hover {
             background-color: #555;
         }
+
+        .content {
+            background-color: white;
+            position: absolute;
+            top: 100vh;
+            z-index: 2;
+            width: calc(100% - 80px);
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .content h2{
+            color: #2D5016;
+        }
+
+        #stats{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .stat-box{
+            flex: 0 0 400px;
+            padding: 1.5rem;
+            border: 0px round #000;
+            border-radius: 8px;
+            background-color: #eee;
+        }
+
+        .stat-box h2{
+            font-family: "Alfa Slab One", serif;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 
 <body>
-    <div id="navbar">hello hi</div>
+    <div id="navbar"><a href="./index.html">Home</a></div>
     <div id="bg"></div>
     <div id="titlename">
             <p>
@@ -103,36 +138,38 @@
             </p>
     </div>
     <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id pellentesque mauris, et scelerisque augue. Curabitur ullamcorper quam a ipsum vehicula efficitur. Aliquam ut arcu leo. Sed fermentum nisi nec eros vestibulum imperdiet. Vivamus ornare velit in venenatis pretium. Vivamus id nisi nec justo consequat luctus eget ac est. Proin eleifend commodo volutpat. Nullam auctor dolor vitae feugiat semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Donec quis cursus augue. Ut ac quam sit amet nisi viverra tempus vel non sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla at tincidunt nisl.
-
-Nam blandit metus non nisi luctus, vitae varius risus rhoncus. Proin eget vulputate urna, eu gravida massa. Maecenas ac posuere sapien. Proin ac sapien eleifend, consectetur nibh at, euismod metus. Suspendisse potenti. Fusce ultricies massa vitae tempus semper. Phasellus ut sem vel nisi elementum faucibus eu nec mi. Vestibulum rhoncus ligula non sem porta, sed condimentum tellus sodales.
-
-Mauris molestie neque vitae lectus blandit, volutpat suscipit nibh molestie. Morbi et ullamcorper neque, at pretium turpis. Etiam hendrerit ipsum ut nibh dapibus aliquet. Morbi dignissim ut magna at consequat. Quisque finibus ac orci sit amet consectetur. Pellentesque in pretium elit, at laoreet ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce semper dictum orci tincidunt iaculis. Duis tincidunt nec mauris vitae porta.
-
-Donec vitae blandit tellus. In risus metus, fringilla nec pulvinar vel, feugiat malesuada purus. Phasellus in nisi eu quam ultricies scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce dictum ultrices mi in elementum. Phasellus eget odio in purus posuere facilisis. Proin dapibus nibh ac mi pretium auctor. Nullam mauris mi, pulvinar id blandit nec, mattis ac elit. Vestibulum aliquam posuere ex, et scelerisque ligula tristique non. Integer laoreet a est id hendrerit.
-
-Ut neque ante, tempor ac mattis consequat, luctus quis mauris. Cras egestas purus a sapien consequat, sed fermentum libero porttitor. Nunc venenatis enim quis dui dictum, in malesuada velit gravida. Curabitur pellentesque viverra mi, quis varius tellus hendrerit ac. Suspendisse posuere orci mattis dolor ornare, vitae feugiat risus tempus. Sed suscipit tortor ac felis egestas sagittis. Aliquam rhoncus id lectus ut auctor. Sed at nibh sapien. Nulla facilisi. Etiam eget cursus magna. Mauris molestie egestas tincidunt. Cras in tellus arcu.
-
-Sed eu nunc consequat nibh tempus suscipit. Etiam congue quam metus, at rhoncus velit elementum accumsan. Maecenas sodales ipsum at tortor vehicula elementum. Cras id dignissim metus. Suspendisse quis lorem a eros suscipit laoreet eu sed est. Cras mattis libero tortor, eget lacinia augue ultrices in. Cras sit amet varius turpis. Suspendisse pharetra, mi a volutpat elementum, sem magna placerat tellus, eu viverra arcu tortor et metus. Praesent suscipit lorem vel purus dignissim, vel tincidunt velit semper. Curabitur elementum leo eget sapien interdum luctus. Nulla egestas lorem quis sapien sodales mattis. In consectetur quam nec posuere rhoncus. Nam facilisis nulla quis dolor fringilla consequat. Donec aliquam risus in nisi porta, sed lobortis ipsum faucibus. Donec et nunc sagittis, vehicula velit sed, imperdiet purus. Integer id auctor risus, non lacinia magna.
-
-Cras vitae urna tortor. Nam at nulla vel nisi iaculis malesuada molestie et ligula. Nunc at lobortis velit, ac molestie ante. Maecenas lobortis sed neque quis vehicula. Maecenas sed imperdiet risus. Integer finibus imperdiet nunc eget suscipit. Sed dapibus mollis tincidunt. Pellentesque efficitur pellentesque eros quis porta. Donec vel commodo nisi. Nunc mollis libero vitae porta vulputate. Proin vel fringilla metus. Nullam vel feugiat nisi. Cras efficitur, magna non porta bibendum, nisl enim molestie metus, id aliquam lectus quam id tellus. Vestibulum vestibulum orci id aliquet venenatis. Ut ut erat lectus. Nam eu quam non est molestie maximus in sit amet nunc.
-
-Nulla scelerisque a velit pretium iaculis. Nulla at odio sodales, suscipit tellus non, feugiat elit. Praesent dapibus magna molestie pulvinar interdum. Donec vestibulum purus eget pulvinar auctor. Ut id purus non dui scelerisque ornare. Nullam et quam iaculis, lobortis odio ac, fermentum eros. Proin euismod felis ut nulla placerat ultrices. Aliquam lacus nunc, pulvinar eu ligula sed, tincidunt pulvinar orci. Maecenas venenatis rutrum magna a aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur feugiat nulla id erat pellentesque porttitor. Sed vitae mattis libero, non fringilla est.
-
-Nulla rutrum dolor quis purus venenatis mollis. Nunc vitae sapien quis ligula elementum lacinia in cursus arcu. Vestibulum congue bibendum semper. Aenean egestas luctus tortor, in dapibus lacus finibus sit amet. In semper arcu urna, nec dapibus mi blandit quis. Morbi dictum lorem vitae purus feugiat, nec lobortis mauris interdum. Vivamus vitae tortor vel augue suscipit cursus non in leo. Praesent malesuada elit vel ligula iaculis, eu congue tortor efficitur. In at velit ipsum. Vestibulum orci nisl, sagittis quis auctor feugiat, faucibus eu risus. Nam sollicitudin leo id odio efficitur, vel malesuada nibh ullamcorper. Nunc nunc nisl, interdum vitae sollicitudin at, facilisis vel libero.
-
-Ut ac eros neque. Fusce elit risus, rhoncus posuere turpis a, consectetur hendrerit dolor. Suspendisse magna eros, bibendum eu rutrum a, vestibulum id tortor. Ut nec ligula vitae massa egestas tristique. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porta, urna id laoreet semper, tortor lorem viverra eros, rutrum aliquam risus odio at magna. Proin semper erat vel nunc volutpat sollicitudin. Vivamus vel arcu a purus tincidunt consequat. Nam porttitor odio vel scelerisque sodales.
-
-Sed nisi purus, commodo eget elit non, fringilla euismod metus. Etiam ut volutpat odio. Nulla nec nulla efficitur, viverra sem et, vulputate sem. Sed tortor sapien, tempor et egestas non, interdum sit amet nisi. Fusce vel sagittis ex. Etiam et arcu bibendum, egestas ante nec, maximus mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In urna arcu, tristique vitae arcu a, faucibus pretium leo. Nullam vitae leo ac diam facilisis tempus. Donec semper lobortis arcu vel scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum a malesuada ante. Fusce diam magna, mattis vitae vulputate ac, interdum vitae metus. Donec enim nunc, tempus et leo eget, convallis ultrices justo. Suspendisse potenti. Aliquam in risus malesuada, commodo sem ut, iaculis odio.
-
-Mauris a velit eget ligula vehicula rhoncus. Etiam eu mi eget purus porta maximus in in orci. Duis venenatis ultricies sem porttitor congue. Morbi maximus lacus et sem ultrices, vel ultrices quam fringilla. Suspendisse scelerisque vel quam a vulputate. Aenean ornare dapibus mauris, et commodo urna placerat ac. Nunc in luctus magna. Nunc ligula odio, ultricies vitae porttitor non, hendrerit a velit. Cras viverra vitae tortor nec porttitor. Donec cursus augue id tincidunt vehicula. Phasellus vitae tempus purus.
-
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean pulvinar libero ut ligula porta luctus. Aenean sem turpis, dictum at imperdiet in, elementum vel leo. Aliquam id luctus mauris, et luctus risus. Ut quis lobortis nunc, ac pulvinar dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas lobortis lorem auctor libero laoreet suscipit. Praesent nec vulputate libero, vitae dignissim ligula.
-
-Phasellus dapibus, nunc id auctor vulputate, libero turpis mattis elit, at egestas nunc massa quis diam. In dictum sem at turpis sagittis vestibulum. Nullam congue tellus massa, quis dapibus augue congue eu. Quisque nec dui venenatis, euismod lacus vitae, euismod quam. In vel ligula aliquam, interdum sapien at, interdum purus. Integer vehicula vehicula neque id sodales. Vivamus at laoreet justo. Nullam finibus turpis in facilisis rhoncus. Aenean sem diam, suscipit quis tincidunt vitae, euismod facilisis quam. Quisque auctor sapien sem, vitae imperdiet purus convallis at. Praesent cursus quam in turpis congue porta. Vivamus volutpat volutpat fringilla.
-
-Fusce sed dictum tellus. Mauris vitae nisl quis ligula laoreet dapibus eget at eros. In hac habitasse platea dictumst. Curabitur gravida, nisl sit amet tristique luctus, mauris magna pretium nisl, vel mollis augue leo eget risus. Sed convallis sem vel vehicula imperdiet. Donec vel nisi eu ex fringilla suscipit. Sed molestie urna ut suscipit finibus.
-
+        <h2>Because there is no <i>plan</i>et B.</h2>
+        <p>Life on land is essential to the health of our planet and to the well-being of every community. 
+            Forests, grasslands, wetlands, and mountains provide clean air, fertile soil, and countless natural resources that sustain human life. 
+            Yet these ecosystems face growing pressures from climate change, deforestation, pollution, and habitat loss.
+             SDG 13: Life on Land calls for urgent action to restore degraded environments, safeguard biodiversity, and promote responsible land use that supports both people and nature.</p>
+        <h2>Why Land Matters</h2>
+        <p>
+            Healthy terrestrial ecosystems are the foundation of all life. They regulate the climate, host most of the world’s biodiversity, and support livelihoods for billions of people. When these landscapes are damaged, we see increased natural disasters, reduced food security, and the loss of species that are vital to ecological balance. Protecting land is not only about conservation—it is about creating a sustainable future where communities and ecosystems thrive together.
+        </p>
+        <h2>By the numbers:</h2>
+        <section id="stats">
+            <div class="stat-box">
+                <h2>75%</h2>
+                <p>Of land on this earth has been significantly altered by human activity.<sup>WWF</sup></p>
+            </div>
+            <div class="stat-box">
+                <h2>1,000,000</h2>
+                <p>Species are currently at risk of extinction.<sup>UN</sup></p>
+            </div>
+            <div class="stat-box">
+                <h2>3.2 Billion</h2>
+                <p>People are being affected by land degredation.<sup>Nat Geo</sup></p>
+            </div>
+            <div class="stat-box">
+                <h2>25 Million</h2>
+                <p>Acres of land, the size of Telangana, are deforested each year.<sup>UNEP</sup></p>
+            </div>
+        </section>
+        <h2>Take Action</h2>
+        <p>
+            Achieving sustainable land use requires collective effort. Whether through volunteering, supporting conservation initiatives, or making everyday choices that reduce environmental impact, everyone has a role to play. Together, we can build a healthier, more resilient world for future generations.
+        </p>
         <p class="footer">© Ayush Prasad, 2025</p>
     </div>
 </body>
